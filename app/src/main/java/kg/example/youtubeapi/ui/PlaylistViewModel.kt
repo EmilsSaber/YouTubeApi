@@ -21,14 +21,13 @@ class PlaylistViewModel : BaseViewModel() {
 
     private fun playlist(): LiveData<PlayLists> {
         val data = MutableLiveData<PlayLists>()
-        apiServise.getPlaylist("AIzaSyBAeAl45ErPy2WBm8bL0YbcMEeSm-IcYFg", "contentDetails,snippet", "UC2Ru64PHqW4FxoP0xhQRvJg").enqueue(
+        apiServise.getPlaylist("AIzaSyBAeAl45ErPy2WBm8bL0YbcMEeSm-IcYFg", "contentDetails, snippet", "UC2Ru64PHqW4FxoP0xhQRvJg").enqueue(
             object : Callback<PlayLists>{
                 override fun onResponse(call: Call<PlayLists>, response: Response<PlayLists>) {
                     if (response.isSuccessful){
                     data.value = response.body()
-                    Log.e("ololo", "onResponse: ", )
+                    Log.e("ololo", "onResponse:" )
                 }}
-
                 override fun onFailure(call: Call<PlayLists>, t: Throwable) {
                     Log.d("ololo", "onSuccess: else")
                 }

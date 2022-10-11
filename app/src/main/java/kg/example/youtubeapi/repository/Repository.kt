@@ -1,36 +1,38 @@
 package kg.example.youtubeapi.repository
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import kg.example.youtubeapi.model.PlayLists
-import kg.example.youtubeapi.remote.ApiServise
-import kg.example.youtubeapi.remote.RetrofitClient
+import kg.example.youtubeapi.data.remote.model.PlayLists
+import kg.example.youtubeapi.data.remote.ApiServise
+import kg.example.youtubeapi.core.remote.RetrofitClient
+import kg.example.youtubeapi.result.Resource
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-open class Repository() {
+open class Repository {
 
-        private val apiServise: ApiServise by lazy {
+        private val apiService: ApiServise by lazy {
         RetrofitClient.create()
     }
 
-    fun getPlaylists(): LiveData<PlayLists>{
+    fun getPlaylists(): MutableLiveData<Resource<PlayLists>> {
         return getPlaylist()
     }
 
-    private fun getPlaylist(): LiveData<PlayLists> {
-        val data = MutableLiveData<PlayLists>()
-        apiServise.getPlaylist().enqueue(
+    private fun getPlaylist(): MutableLiveData<Resource<PlayLists>> {
+        val data = MutableLiveData<Resource<PlayLists>>()
+        data.value = Resource.loading()
+        apiService.getPlaylist().enqueue(
             object : Callback<PlayLists> {
                 override fun onResponse(call: Call<PlayLists>, response: Response<PlayLists>) {
                     if (response.isSuccessful){
-                        data.value = response.body()
+                        data.value = Resource.success(response.body())
                         Log.e("ololo", "onResponse:" + response.body() )
                     }}
                 override fun onFailure(call: Call<PlayLists>, t: Throwable) {
                     Log.d("ololo", "onSuccess: else")
+                    data.value = Resource.error( null,t.message)
                 }
             }
         )

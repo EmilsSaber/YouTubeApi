@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import kg.example.youtubeapi.databinding.ItemPlaylistBinding
-import kg.example.youtubeapi.model.Item
+import kg.example.youtubeapi.data.remote.model.Item
 
 class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 

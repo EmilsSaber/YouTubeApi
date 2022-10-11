@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/emil/AndroidStudioProjects/YouTubeApi/app/src/main/res/drawable/image_3.xml" value="0.1645" />
+        <entry key="..\:/Users/emil/AndroidStudioProjects/YouTubeApi/app/src/main/res/font/noto_sanss.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/emil/AndroidStudioProjects/YouTubeApi/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/emil/AndroidStudioProjects/YouTubeApi/app/src/main/res/layout/activity_playlist.xml" value="0.25" />
-        <entry key="..\:/Users/emil/AndroidStudioProjects/YouTubeApi/app/src/main/res/layout/item_playlist.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/emil/AndroidStudioProjects/YouTubeApi/app/src/main/res/layout/activity_playlist.xml" value="0.2" />
+        <entry key="..\:/Users/emil/AndroidStudioProjects/YouTubeApi/app/src/main/res/layout/item_pixabay.xml" value="0.25" />
+        <entry key="..\:/Users/emil/AndroidStudioProjects/YouTubeApi/app/src/main/res/layout/item_playlist.xml" value="0.176" />
       </map>
     </option>
   </component>

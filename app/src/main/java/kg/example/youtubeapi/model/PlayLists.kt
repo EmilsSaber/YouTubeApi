@@ -1,5 +1,8 @@
 package kg.example.youtubeapi.model
 
 data class PlayLists(
-    var kind: String? = null
+    val etag: String,
+    val items: List<Item>,
+    val kind: String,
+    val pageInfo: PageInfo
 )

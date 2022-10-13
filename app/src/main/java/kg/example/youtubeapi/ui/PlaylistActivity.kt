@@ -9,6 +9,7 @@ import kg.example.youtubeapi.ImageAdapter
 import kg.example.youtubeapi.databinding.ActivityPlaylistBinding
 import kg.example.youtubeapi.data.remote.model.PlayLists
 import kg.example.youtubeapi.result.Status
+import kg.example.youtubeapi.utils.CheckConnectionInternet
 
 class PlaylistActivity : BaseActivity<ActivityPlaylistBinding, PlaylistViewModel>() {
     override val viewModel: PlaylistViewModel by lazy {
@@ -36,6 +37,9 @@ class PlaylistActivity : BaseActivity<ActivityPlaylistBinding, PlaylistViewModel
                     binding.progress.isVisible = true
                 }
             }
+        }
+        CheckConnectionInternet(this).observe(this){
+            binding.incInternet.conInt.isVisible = !it
         }
     }
 

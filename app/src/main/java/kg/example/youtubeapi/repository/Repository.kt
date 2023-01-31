@@ -5,14 +5,17 @@ import androidx.lifecycle.MutableLiveData
 import kg.example.youtubeapi.data.remote.model.PlayLists
 import kg.example.youtubeapi.data.remote.ApiServise
 import kg.example.youtubeapi.core.remote.RetrofitClient
+import kg.example.youtubeapi.data.remote.model.Item
 import kg.example.youtubeapi.result.Resource
+import kg.example.youtubeapi.utils.Constant.apiKey
+import kg.example.youtubeapi.utils.Constant.part
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 open class Repository {
 
-        private val apiService: ApiServise by lazy {
+    private val apiService: ApiServise by lazy {
         RetrofitClient.create()
     }
 

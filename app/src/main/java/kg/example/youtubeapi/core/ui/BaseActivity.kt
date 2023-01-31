@@ -23,7 +23,4 @@ abstract class BaseActivity<VB: ViewBinding, VM: ViewModel> : AppCompatActivity(
     open fun initViewModel(){}
     open fun initListener(){}
 
-
-
-
 }

@@ -28,6 +28,7 @@ class PlaylistActivity : BaseActivity<ActivityPlaylistBinding, PlaylistViewModel
                 Status.SUCCESS ->{
                     binding.progress.isVisible = false
                     it.data?.items?.let { it1 -> adapter.add(it1) }
+
                 }
                 Status.ERROR -> {
                     binding.progress.isVisible = false
